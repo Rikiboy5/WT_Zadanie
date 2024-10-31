@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="sk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bs-theme-overrides.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Celý layout fullscreen */
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            background-color: #000;
+            color: var(--bs-primary);
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .intro-section {
+            display: flex;
+            width: 95%;
+            max-width: 1600px;
+            height: 100vh;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2rem;
+            margin: 0 auto;
+        }
+
+        .intro-text {
+            flex: 1;
+            padding-right: 3rem;
+            animation: fadeInLeft 1s ease-in-out;
+        }
+
+        .intro-text h1 {
+            font-size: 7rem;
+            font-weight: bold;
+            color: #fff;
+            line-height: 1.1;
+            margin: 0;
+        }
+
+        .intro-text h1 span {
+            color: var(--bs-secondary);
+            font-style: italic;
+        }
+
+        .intro-text h2 {
+            font-size: 4.5rem;
+            font-weight: lighter;
+            color: var(--bs-secondary);
+            font-style: italic;
+            margin-top: -0.5rem;
+        }
+
+        .intro-text p {
+            color: #aaa;
+            margin-top: 1.5rem;
+            font-size: 1.75rem;
+            max-width: 80%;
+            line-height: 1.6;
+        }
+
+        .intro-image {
+            flex: 1;
+            max-width: 800px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            animation: fadeInRight 1s ease-in-out;
+        }
+
+        .intro-image img {
+            width: 100%;
+            max-width: 700px;
+            max-height: 500px;
+            height: 100%;
+            border-radius: 30px;
+            object-fit: contain;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .intro-image img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 60px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Sekcia pre členov tímu */
+        .team-section {
+            padding: 4rem 2rem;
+            text-align: center;
+            color: #fff;
+            background-color: #111;
+            width: 100%;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .button-container button {
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            background-color: var(--bs-secondary);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button-container button:hover,
+        .button-container button.active {
+            background-color: #5ea1a6;
+        }
+
+        /* Štýly pre info o členoch tímu */
+        .info-container {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            background-color: #222;
+            padding: 2rem;
+            border-radius: 20px;
+            color: #fff;
+            max-width: 1600px;
+            margin: 2rem auto 0;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .member-photo {
+            width: 750px;
+            height: 700px;
+            background-color: #333;
+            border-radius: 10px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .member-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .member-info h2 {
+            font-size: 2.5rem;
+            color: var(--bs-secondary);
+        }
+
+        .member-info h3 {
+            font-size: 1.5rem;
+            color: #bbb;
+            margin-top: 0.5rem;
+            font-weight: normal;
+        }
+
+        .member-info p {
+            color: #aaa;
+            line-height: 1.6;
+            margin-top: 1rem;
+            font-size: 1.2rem;
+        }
+
+        /* Štýly pre skills */
+        .skills-section {
+            background-color: #111;
+            color: #fff;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .skills-content h2 {
+            font-size: 3rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .skills-content p {
+            color: #aaa;
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+        }
+
+        .skills-content h3 {
+            font-size: 2rem;
+            color: #fff;
+            margin-top: 3rem;
+            border-bottom: 2px solid #555;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .skill-item {
+            background-color: #333;
+            border-radius: 10px;
+            padding: 1.5rem;
+            width: 150px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .skill-item:hover {
+            transform: scale(1.1);
+        }
+
+        .skill-item i {
+            font-size: 2rem;
+            color: #a29bfe;
+            margin-bottom: 1rem;
+        }
+
+        .skill-item p {
+            color: #fff;
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        /* Štýly pre projekty */
+        
+        .projects-section {
+    padding: 4rem 2rem;
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+}
+
+.projects-section h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.projects-section p {
+    color: #aaa;
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    line-height: 1.6;
+}
+
+.carousel-item img {
+    border-radius: 10px;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.project-details {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.project-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.project-category {
+    font-size: 1rem;
+    color: #bbb;
+}
+
+ /* Štýly pre sekciu pracovných skúseností */
+    .work-section {
+        padding: 4rem 2rem;
+        
+        color: #fff;
+        text-align: center;
+        margin-top: 4rem;
+    }
+
+    .work-info-container {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        margin-top: 2rem;
+        background-color: #111;
+        padding: 2rem;
+        border-radius: 20px;
+        color: #fff;
+        max-width: 1600px;
+        margin: 2rem auto 0;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .work-info {
+        flex: 1;
+        text-align: left;
+    }
+
+    .work-info h2 {
+        font-size: 2.5rem;
+        color: var(--bs-secondary);
+    }
+
+    .work-info h3 {
+        font-size: 1.5rem;
+        color: #bbb;
+        margin-top: 0.5rem;
+        font-weight: normal;
+    }
+
+    .work-info p {
+        color: #aaa;
+        line-height: 1.6;
+        margin-top: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .work-photo {
+        flex: 1;
+        max-width: 750px;
+        height: 500px;
+        background-color: #333;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .work-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    /* Štýly pre sekciu voľnočasových záľub */
+     .hobbies-section {
+    padding: 4rem 2rem;
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+}
+
+.hobbies-section h2 {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+}
+
+.hobbies-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem; /* Priestor medzi kartami */
+    flex-wrap: wrap;
+}
+
+.hobby-card {
+    background-color: #222;
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+    width: 500px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hobby-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+}
+
+.hobby-card img {
+    width: 100%;
+    border-radius: 15px;
+    height: 450px;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+}
+
+.hobby-title {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.hobby-description {
+    color: #aaa;
+    font-size: 1.4rem;
+}
+/* Úpravy pre stredné a malé obrazovky */
+@media (max-width: 1200px) {
+    /* Intro sekcia */
+    .intro-section {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+    }
+
+    .intro-text h1 {
+        font-size: 4rem;
+    }
+
+    .intro-text h2 {
+        font-size: 3rem;
+    }
+
+    .intro-image {
+        max-width: 100%;
+        margin-top: 2rem;
+    }
+
+    .intro-image img {
+        max-width: 80%;
+        max-height: 300px;
+    }
+
+    /* Sekcia členov tímu */
+    .info-container {
+        flex-direction: column;
+        padding: 2rem 1rem;
+        text-align: center;
+    }
+
+    .member-photo {
+        width: 100%;
+        height: 400px;
+    }
+}
+
+/* Pre malé obrazovky */
+@media (max-width: 768px) {
+    /* Intro sekcia */
+    .intro-text h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+
+    .intro-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .intro-text p {
+        font-size: 1rem;
+        line-height: 1.4;
+        max-width: 100%;
+    }
+
+    /* Sekcia členov tímu */
+    .info-container {
+        padding: 1.5rem 1rem;
+    }
+
+    .member-photo {
+        height: 300px;
+    }
+    .button-container {
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    /* Pracovné skúsenosti sekcia */
+    .work-info-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .work-photo {
+        width: 100%;
+        height: 300px;
+    }
+
+    /* Voľnočasové záľuby sekcia */
+    .hobbies-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .hobby-card {
+        width: 100%;
+        padding: 1.5rem;
+    }
+
+    .hobby-card img {
+        height: 300px;
+    }
+}
+/* Animácie pre text a obrázok */
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+    <!-- Úvodná sekcia fullscreen -->
+    <section class="intro-section">
+        <div class="intro-text">
+            <p class="text-uppercase" style="color: var(--bs-secondary-text-emphasis); font-size: 1.5rem;">Naše Záľuby
+            </p>
+            <h1>Ahoj! <span>Sme</span> tím študentov predmetu</h1>
+            <h2>Webové technológie</h2>
+            <p>Na tejto stránke sa môžete dozvedieť viac o našich záľubách, skúsenostiach, ako aj o projektoch, na
+                ktorých pracujeme. Každý z nás má svoje jedinečné zručnosti.</p>
+        </div>
+        <div class="intro-image">
+            <img src='./assets/images/banner.jpg' alt="Náš tím">
+        </div>
+    </section>
+
+    <!-- Sekcia pre členov tímu -->
+    <section class="team-section" id="team">
+        <h2>Členovia tímu</h2>
+        <div class="button-container">
+            <button onclick="showInfo('member1', this)" class="active">Simon</button>
+            <button onclick="showInfo('member2', this)">Meno 2</button>
+            <button onclick="showInfo('member3', this)">Meno 3</button>
+            <button onclick="showInfo('member4', this)">Meno 4</button>
+        </div>
+
+        <div id="member-info" class="info-container">
+            <div class="member-photo">
+                <img id="member-photo" src="./assets/images/banner.jpg" alt="Profil člena">
+            </div>
+            <div class="member-info">
+                <h2 id="member-name">Simon</h2>
+                <h3 id="member-role">Front-End Developer</h3>
+                <p id="member-details">Simon je študent s vášňou pre front-end vývoj a dizajn webových aplikácií. Má
+                    skúsenosti s HTML, CSS, JavaScriptom a rád sa učí nové technológie.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills sekcia -->
+    <section class="skills-section">
+        <div class="skills-content">
+            <h2>Zručnosti & Skúsenosti</h2>
+            <p>Môj základ v UI/UX dizajne mi umožňuje vytvárať intuitívne a pútavé používateľské zážitky. Vykonávam
+                dôkladný výskum používateľov a testovanie použiteľnosti, aby moje návrhy spĺňali potreby používateľov a
+                ciele podnikania.</p>
+
+            <h3>Zručnosti</h3>
+            <div class="skills-grid" id="skills-grid">
+                <div class="skill-item">
+                    <i class="fas fa-paint-brush"></i>
+                    <p>Vizuálny dizajn</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-vector-square"></i>
+                    <p>Wireframe</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sekcia pre projekty -->
+    <section class="projects-section" id="projects">
+        <h2>Moje Najnovšie Projekty</h2>
+        <p>Na tejto stránke môžete nájsť niektoré z mojich najnovších projektov, kde som sa zameral na dizajn a
+            používateľskú skúsenosť.</p>
+    
+        <div class="row justify-content-center" id="projects-grid">
+            <!-- Projekty sa dynamicky naplnia podľa vybraného člena -->
+        </div>
+    </section>
+
+    <!-- Sekcia pre pracovné skúsenosti -->
+    <section class="work-section" id="work">
+        <h2>Pracovné Skúsenosti</h2>
+        <div id="work-info" class="work-info-container">
+            <div class="work-info">
+                <h2 id="work-title">Frontend Developer</h2>
+                <h3 id="work-company">Firma: Web Solutions s.r.o.</h3>
+                <p id="work-details">Simon pracuje ako frontend developer pre spoločnosť Web Solutions s.r.o., kde sa venuje
+                    vývoju a údržbe webových aplikácií.</p>
+            </div>
+            <div class="work-photo">
+                <img id="work-photo" src="./assets/images/company_photo.jpg" alt="Pracovné miesto člena">
+            </div>
+        </div>
+    </section>
+
+    <section class="hobbies-section">
+        <h2>Voľnočasové Záľuby</h2>
+        <div class="hobbies-container">
+            <div class="row justify-content-center" id="hobbies-grid">
+                <!-- Záľuby člena sa dynamicky zobrazia tu -->
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        const teamMembers = {
+            member1: {
+                name: "Simon",
+                role: "Junior Full-Stack Developer",
+                photo: './assets/images/Simon.jpg',
+                details: "Ahojte, Volám sa Simon. Mám 22 rokov a pochádzam z mesta Vranov nad Topľou. Aktuálne som v treťom ročníku na FEI TUKE, študíjny program počítačové siete. Pracujem v spoločnosti Syntax Systems na v IPS EU tíme.",
+                skillsDescription: "Vo svojom voľnom čase sa venujem Full-Stack technológiam, prevažne REACT, Express, Node.js a MongoDB. Na styling používam knižnicu TaillWind.css a Framer-motion na animácie.",
+                skills: [
+                    { icon: 'fab fa-react', name: 'React' },
+                    { icon: 'fas fa-server', name: 'Express' },
+                    { icon: 'fab fa-node-js', name: 'Node.js' },
+                    { icon: 'fas fa-database', name: 'MongoDB' },
+                    { icon: 'fas fa-paint-brush', name: 'Tailwind CSS' },
+                    { icon: 'fas fa-play-circle', name: 'Framer Motion' }
+                ],
+                projects: [
+                    {
+                        title: "Webová FinTech aplikácia ",
+                        category: "Full-Stack webová aplikácia poháňaná pomocou A.I",
+                        images: ['./assets/images/Fintech1.png', './assets/images/Fintech2.png', './assets/images/Fintech3.png']
+                    },
+                    {
+                        title: "Firemný DashBoard ",
+                        category: "Full-Stack pokročilý DashBoard",
+                        images: ['./assets/images/Dashboard1.png', './assets/images/Dashboard2.png', './assets/images/Dashboard3.png']
+                    },
+                    
+                ],
+                work: {
+                    title: "IPS EU Admin",
+                    company: "Syntax Systems s.r.o.",
+                    photo: './assets/images/hd.jpg',
+                    details: "Pracujem ako Linux Administrátor pre Spoločnosť Syntax Systems v IPS EU tíme, kde sa špecializujem na správu a údržbu serverov.Syntax Systems je globálna technologická spoločnosť so sídlom v Kanade, ktorá poskytuje komplexné IT riešenia zamerané na cloudové služby, správu ERP systémov a infraštruktúrne služby pre podniky po celom svete."
+                },
+                hobbies: [
+                    {
+                        title: 'Cestovanie',
+                        description: 'Veľmi rád objavujem rôzne kúsky sveta, či už s priateľmi alebo rodinou.',
+                        images: ['./assets/images/t1.jpg', './assets/images/t2.jpg', './assets/images/t3.jpg']
+                    },
+                    {
+                        title: 'Fitness',
+                        description: 'Vo voľnom čase trávim dosť veľké množstvom vo fitku alebo športe.',
+                        images: ['./assets/images/f1.jpg', './assets/images/f2.jpg']
+                    },
+                    {
+                        title: 'Športová kynológia',
+                        description: 'Som veľkým priaznivcom poslušnosti psov, militárnych výcvikov a trénovania obrany.',
+                        images: ['./assets/images/p1.jpg', './assets/images/p2.jpg', './assets/images/p3.jpg']
+                    }
+                ]
+            },
+            member2: {
+                name: "Meno 2",
+                role: "Back-End Developer",
+                photo: "path_to_member_image2.jpg",
+                details: "Meno 2 je expert na back-end programovanie a má skúsenosti s databázami. Zameriava sa na efektívnosť a bezpečnosť aplikácií.",
+                skillsDescription: "Simon má skúsenosti v UI/UX dizajne, kde využíva moderné nástroje na vytvorenie intuitívnych aplikácií.",
+                skills: [
+                    { icon: 'fas fa-database', name: 'Databázy' },
+                    { icon: 'fas fa-lock', name: 'Bezpečnosť' }
+                ],
+                projects: [
+                    {
+                        title: "E-commerce Backend",
+                        category: "Backend Vývoj",
+                        images: ['./assets/images/banner.jpg', './assets/images/banner.jpg']
+                    }
+                ],
+                work: {
+                    title: "Frontend Developer",
+                    company: "Web Solutions s.r.o.",
+                    photo: './assets/images/hd.jpg',
+                    details: "Simon pracuje ako frontend developer pre spoločnosť Web Solutions s.r.o., kde sa venuje vývoju a údržbe webových aplikácií s dôrazom na moderné technológie a používateľský dizajn."
+                },
+                 hobbies: [
+                    {
+                        title: 'Cestovanie',
+                        description: 'Milujem objavovať nové miesta a kultúry.',
+                        images: ['./assets/images/banner.jpg'] // Pole s jednou fotkou
+                    }
+                ]
+            },
+            member3: {
+                name: "Meno 3",
+                role: "UX/UI Dizajnér",
+                photo: "path_to_member_image3.jpg",
+                details: "Meno 3 sa zameriava na UX/UI dizajn a jeho cieľom je zlepšiť používateľskú skúsenosť prostredníctvom moderného a intuitívneho dizajnu.",
+                skillsDescription: "Simon má skúsenosti v UI/UX dizajne, kde využíva moderné nástroje na vytvorenie intuitívnych aplikácií.",
+                skills: [
+                    { icon: 'fas fa-pencil-alt', name: 'Grafický dizajn' },
+                    { icon: 'fas fa-user-check', name: 'Výskum používateľov' }
+                ],
+                projects: [
+                    {
+                        title: "E-commerce Backend",
+                        category: "Backend Vývoj",
+                        images: ['./assets/images/banner.jpg', './assets/images/banner.jpg']
+                    }
+                ],
+                work: {
+                    title: "Frontend Developer",
+                    company: "Web Solutions s.r.o.",
+                    photo: './assets/images/hd.jpg',
+                    details: "Simon pracuje ako frontend developer pre spoločnosť Web Solutions s.r.o., kde sa venuje vývoju a údržbe webových aplikácií s dôrazom na moderné technológie a používateľský dizajn."
+                },
+                 hobbies: [
+                    {
+                        title: 'Cestovanie',
+                        description: 'Milujem objavovať nové miesta a kultúry.',
+                        images: ['./assets/images/banner.jpg'] // Pole s jednou fotkou
+                    }
+                ]
+            },
+            member4: {
+                name: "Meno 4",
+                role: "Projektový Manažér",
+                photo: "path_to_member_image4.jpg",
+                details: "Meno 4 má skúsenosti s projektovým manažmentom a koordináciou tímov. Zaisťuje, aby všetky projekty boli dokončené včas a kvalitne.",
+                skillsDescription: "Simon má skúsenosti v UI/UX dizajne, kde využíva moderné nástroje na vytvorenie intuitívnych aplikácií.",
+                skills: [
+                    { icon: 'fas fa-tasks', name: 'Riadenie projektov' },
+                    { icon: 'fas fa-people-carry', name: 'Koordinácia tímu' }
+                ],
+                projects: [
+                    {
+                        title: "E-commerce Backend",
+                        category: "Backend Vývoj",
+                        images: ['./assets/images/banner.jpg', './assets/images/banner.jpg']
+                    }
+                ],
+                work: {
+                    title: "Frontend Developer",
+                    company: "Web Solutions s.r.o.",
+                    photo: './assets/images/hd.jpg',
+                    details: "Simon pracuje ako frontend developer pre spoločnosť Web Solutions s.r.o., kde sa venuje vývoju a údržbe webových aplikácií s dôrazom na moderné technológie a používateľský dizajn."
+                },
+                 hobbies: [
+                    {
+                        title: 'Cestovanie',
+                        description: 'Milujem objavovať nové miesta a kultúry.',
+                        images: ['./assets/images/banner.jpg'] // Pole s jednou fotkou
+                    }
+                ]
+            }
+        };
+
+         function showInfo(memberKey, button) {
+                const member = teamMembers[memberKey];
+
+                // Zobrazenie informácií o členovi
+                document.getElementById("member-photo").src = member.photo;
+                document.getElementById("member-name").innerText = member.name;
+                document.getElementById("member-role").innerText = member.role;
+                document.getElementById("member-details").innerText = member.details;
+
+                // Renderovanie zručností
+                 document.querySelector('.skills-content p').innerText = member.skillsDescription;
+                const skillsGrid = document.getElementById("skills-grid");
+                skillsGrid.innerHTML = "";
+                member.skills.forEach(skill => {
+                    const skillItem = document.createElement("div");
+                    skillItem.className = "skill-item";
+                    skillItem.innerHTML = `<i class="${skill.icon}"></i><p>${skill.name}</p>`;
+                    skillsGrid.appendChild(skillItem);
+                });
+
+                // Renderovanie projektov
+                const projectsGrid = document.getElementById("projects-grid");
+                projectsGrid.innerHTML = "";
+                member.projects.forEach((project, index) => {
+                    const projectHTML = `
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div id="projectCarousel${index}" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            ${project.images.map((image, idx) => `
+                                <div class="carousel-item ${idx === 0 ? 'active' : ''}">
+                                    <img src="${image}" class="d-block w-100" alt="${project.title}">
+                                </div>
+                            `).join('')}
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel${index}" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Predošlý</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel${index}" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Ďalší</span>
+                        </button>
+                        <div class="project-details">
+                            <h5 class="project-title">${project.title}</h5>
+                            <p class="project-category">${project.category}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+                    projectsGrid.insertAdjacentHTML('beforeend', projectHTML);
+                });
+
+                // Renderovanie pracovných skúseností
+                const work = member.work;
+                document.getElementById("work-title").innerText = work.title;
+                document.getElementById("work-company").innerText = `Firma: ${work.company}`;
+                document.getElementById("work-details").innerText = work.details;
+                document.getElementById("work-photo").src = work.photo;
+
+                // Renderovanie záľub
+             const hobbiesGrid = document.getElementById("hobbies-grid");
+             hobbiesGrid.innerHTML = "";
+             member.hobbies.forEach((hobby, hobbyIndex) => {
+                 const hobbyItem = `
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="hobby-card">
+                <div id="hobbyCarousel${hobbyIndex}" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        ${hobby.images.map((image, idx) => `
+                            <div class="carousel-item ${idx === 0 ? 'active' : ''}">
+                                <img src="${image}" class="d-block w-100" alt="${hobby.title}">
+                            </div>
+                        `).join('')}
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#hobbyCarousel${hobbyIndex}" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Predošlý</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#hobbyCarousel${hobbyIndex}" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Ďalší</span>
+                    </button>
+                </div>
+                <h3 class="hobby-title">${hobby.title}</h3>
+                <p class="hobby-description">${hobby.description}</p>
+            </div>
+        </div>
+    `;
+                 hobbiesGrid.insertAdjacentHTML('beforeend', hobbyItem);
+             });
+
+
+                // Zvýraznenie aktívneho tlačidla
+                document.querySelectorAll('.button-container button').forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+            }
+
+            document.addEventListener("DOMContentLoaded", () => {
+                showInfo('member1', document.querySelector('.button-container button.active'));
+            });
+        </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+
+</html>
