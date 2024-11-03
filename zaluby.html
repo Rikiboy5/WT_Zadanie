@@ -543,7 +543,7 @@
         <h2>Členovia tímu</h2>
         <div class="button-container">
             <button onclick="showInfo('member1', this)" class="active">Simon</button>
-            <button onclick="showInfo('member2', this)">Meno 2</button>
+            <button onclick="showInfo('member2', this)">Richard</button>
             <button onclick="showInfo('member3', this)">Meno 3</button>
             <button onclick="showInfo('member4', this)">Meno 4</button>
         </div>
@@ -674,33 +674,53 @@
                 ]
             },
             member2: {
-                name: "Meno 2",
-                role: "Back-End Developer",
-                photo: "path_to_member_image2.jpg",
-                details: "Meno 2 je expert na back-end programovanie a má skúsenosti s databázami. Zameriava sa na efektívnosť a bezpečnosť aplikácií.",
-                skillsDescription: "Simon má skúsenosti v UI/UX dizajne, kde využíva moderné nástroje na vytvorenie intuitívnych aplikácií.",
+                name: "Richard",
+                role: "Full-stack developer",
+                photo: "./assets/images/riso.jpg",
+                details: "Ahoj, moje meno je Richard. Pochádzam z Prešova a mám 22 rokov. Som študentom Technickej univerzity v Košiciach a okrem toho pracujem v spoločnosti POCAR s.r.o. ako správca sieťovej a serverovej infraštruktúry.",
+                skillsDescription: "Vo svojom voľnom čase sa venujem full-stack tvorbe webov, návrhu a tvorbe databáz a ďalším back-endovým a sieťovým technológiam.",
                 skills: [
                     { icon: 'fas fa-database', name: 'Databázy' },
-                    { icon: 'fas fa-lock', name: 'Bezpečnosť' }
+                    { icon: 'fas fa-server', name: 'Serverové technológie' },
+                    { icon: 'fas fa-network-wired', name: 'Sieťové technológie' },
+                    { icon: 'fa-brands fa-php', name: 'PHP' },
+                    { icon: 'fas fa-globe', name: 'Web development' },
+
+
                 ],
                 projects: [
                     {
-                        title: "E-commerce Backend",
-                        category: "Backend Vývoj",
-                        images: ['./assets/images/banner.jpg', './assets/images/banner.jpg']
+                        title: "Aquaruthenia Svidník",
+                        category: "Full-stack vývoj",
+                        images: ['./assets/images/aqr.png', './assets/images/aqr2.png']
+                    },
+                    {
+                        title: "FALCONI s.r.o",
+                        category: "Full-stack vývoj",
+                        images: ['./assets/images/falconi.png', './assets/images/falconi2.png']
                     }
                 ],
                 work: {
-                    title: "Frontend Developer",
-                    company: "Web Solutions s.r.o.",
-                    photo: './assets/images/hd.jpg',
-                    details: "Simon pracuje ako frontend developer pre spoločnosť Web Solutions s.r.o., kde sa venuje vývoju a údržbe webových aplikácií s dôrazom na moderné technológie a používateľský dizajn."
+                    title: "Správca infraštruktúry",
+                    company: "POCAR s.r.o.",
+                    photo: './assets/images/fb.png',
+                    details: "Pracujem v spoločnosti POCAR s.r.o. a mojou úlohou je zabezpečiť bezproblémový chod sieťovej a serverovej infraštruktúry spoločnosti."
                 },
                  hobbies: [
                     {
                         title: 'Cestovanie',
-                        description: 'Milujem objavovať nové miesta a kultúry.',
+                        description: 'Veľmi rád objavujem krásy našej Zeme.',
+                        images: ['./assets/images/IMG_1033.jpeg', './assets/images/IMG_5971.jpeg'] // Pole s jednou fotkou
+                    },
+                    {
+                        title: 'Vzdelávanie sa',
+                        description: 'Rád sa vzdelávam v rôznych IT oblastiach.',
                         images: ['./assets/images/banner.jpg'] // Pole s jednou fotkou
+                    },
+                    {
+                        title: 'Posilovanie',
+                        description: 'Veľmi rád chodím do posilovne.',
+                        images: ['./assets/images/IMG_1379.jpeg','./assets/images/IMG_1378.jpeg'] // Pole s jednou fotkou
                     }
                 ]
             },
