@@ -1,4 +1,14 @@
-body,html {
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+body, html {
     height: 100%;
     margin: 0;
     background-color: #000;
@@ -7,53 +17,178 @@ body,html {
     scroll-behavior: smooth;
 }
 
-.navbar{
+.navbar {
     padding: 0;
     margin: 0;
-    background-color: #222;   
 }
-
-.rightnav img{
+.rightnav img {
     margin: 10px;
-    align-content:end;
+    align-content: end;
     width: 80px;
 }
-
-.rightnav a{
+.rightnav a {
     text-decoration: none;
     color: var(--bs-secondary);
     font-size: 20px;
     text-align: center;
 }
-
-.leftnav{
+.leftnav {
     float: right;
 }
-.zaluby{
+.zaluby, .zmeny {
     text-decoration: none;
     color: var(--bs-secondary);
     padding: 10px;
+    margin: 10px;
+}
+.zaluby:hover, .zmeny:hover {
+    background-color: #5ea1a6;
 }
 
-.zaluby:hover{
-    color: #5ea1a6;
+
+.banner {
+    display: flex;
+    width: 100%;
+    max-width: 1600px;
+    height: 100vh;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    margin: 0 auto;
+    background-color: rgba(30, 30, 30, 0.8); 
+    border-bottom-right-radius:40px ;
+    border-bottom-left-radius:40px ;
 }
-
-.zmeny{
-    text-decoration: none;
-    color: var(--bs-secondary);
-    padding: 10px;
-}
-
-.zmeny:hover{
-    color: #5ea1a6;
-} 
-
-.MainContent{
-    padding: 200px;
-    text-align: center;    
+.text {
+    flex: 1;
+    padding-right: 3rem;
 }
 
 .tittle{
     font-size: 60px;
+
+}
+.bannerImg {
+    flex: 1;
+    max-width: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    animation: fadeInRight 1s ease-in-out;
+}
+
+
+.bannerImg img {
+    width: 100%;
+    max-width: 512px;
+    max-height: 512px;
+    height: 100%;
+    border-radius: 50px;
+    object-fit: contain; 
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: none; 
+}
+
+.bannerImg img.active {
+    display: block; 
+    animation: fadeIn 1s ease-in-out; 
+}
+
+.bannerImg img.fade-out {
+    display: block; 
+    animation: fadeOut 1s ease-in-out; 
+}
+
+.bannerImg img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px  rgb(113, 185, 191);
+}
+
+
+.about, .contact, .school-info {
+    padding: 4rem 2rem;
+    text-align: center;
+    color: #fff;
+    background-color: #111;
+    width: 100%;
+}
+.info, .container, .school-info-content {
+    display: block;
+    align-items: center;
+    text-align: left;
+    gap: 2rem;
+    margin-top: 2rem;
+    background-color: #222;
+    padding: 2rem;
+    border-radius: 20px;
+    color: #fff;
+    max-width: 1600px;
+    margin: 2rem auto 0;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.textA{
+    color: #5ea1a6;
+}
+.textP {
+    color: #aaa;
+    line-height: 1.6;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+.hobbies-link {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: #aaa;
+}
+
+.hobbies-link a {
+    color: #5ea1a6; 
+    text-decoration: none; 
+}
+
+.hobbies-link a:hover {
+    color: #fff; 
+}
+
+/* Sekcia o Našej Škole */
+.school-info {
+    background-color: #111;
+}
+.school-info h3 {
+    color: #5ea1a6;
+    font-size: 2rem;
+}
+.school-info p {
+    color: #aaa;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+/* Sekcia Kontakt */
+.container a {
+    border-radius: 10px;
+    background-color: var(--bs-secondary);
+    border: none;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+.container a:hover {
+    background-color: #5ea1a6;
+}
+
+.gallery img {
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
