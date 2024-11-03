@@ -1,0 +1,59 @@
+body,html {
+    height: 100%;
+    margin: 0;
+    background-color: #000;
+    color: var(--bs-primary);
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+.navbar{
+    padding: 0;
+    margin: 0;
+    background-color: #222;   
+}
+
+.rightnav img{
+    margin: 10px;
+    align-content:end;
+    width: 80px;
+}
+
+.rightnav a{
+    text-decoration: none;
+    color: var(--bs-secondary);
+    font-size: 20px;
+    text-align: center;
+}
+
+.leftnav{
+    float: right;
+}
+.zaluby{
+    text-decoration: none;
+    color: var(--bs-secondary);
+    padding: 10px;
+}
+
+.zaluby:hover{
+    color: #5ea1a6;
+}
+
+.zmeny{
+    text-decoration: none;
+    color: var(--bs-secondary);
+    padding: 10px;
+}
+
+.zmeny:hover{
+    color: #5ea1a6;
+} 
+
+.MainContent{
+    padding: 200px;
+    text-align: center;    
+}
+
+.tittle{
+    font-size: 60px;
+}
