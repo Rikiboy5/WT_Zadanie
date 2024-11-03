@@ -221,65 +221,63 @@
   </div>    
   <div class="container py-5 bg-dark roadmap">
     <div class="main-timeline-4 text-white" id="timeline">
+
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
+
     const timelineData = [
       {
         title: "Vytvorenie návrhu",
-        time: "21 Októbra",
-        description: "Začiatok našej tímovej spolupráce a vytvorenie prvotných návrhov webu.",
-        position: "left-4"
+        time: "21. Októbra",
+        description: "Začiatok našej tímovej spolupráce a vytvorenie základného návrhu webu, výber farebnej palety a začiatok samotného procesu tvorby."
       },
       {
         title: "Vytvorenie podstránky O nás",
-        time: "25 Október",
-        description: "",
-        position: "right-4"
+        time: "25. Október",
+        description: ""
       },
       {
         title: "Vytvorenie podstránky Zmeny",
-        time: "1 Novembra",
-        description: "Vytvorenie podstránky zmeny, do ktorej náš tím bude pridávať všetky vykonané zmeny na stránke. Všetky zmeny sú pridávané pomocou JavaScriptu.",
-        position: "left-4"
+        time: "1. Novembra",
+        description: "Vytvorenie podstránky zmeny, do ktorej náš tím bude pridávať všetky vykonané zmeny na stránke. Všetky zmeny sú pridávané pomocou JavaScriptu."
       },
       {
         title: "3:55 PM",
         time: "Apr 26",
-        description: "Lorem ipsum dolor sit amet, quo ei simul congue exerci...",
-        position: "right-4"
+        description: "Lorem ipsum dolor sit amet, quo ei simul congue exerci..."
       },
       {
         title: "5:24 PM",
         time: "Apr 12",
-        description: "Lorem ipsum dolor sit amet, quo ei simul congue exerci...",
-        position: "left-4"
+        description: "Lorem ipsum dolor sit amet, quo ei simul congue exerci..."
       },
       {
         title: "11:25 AM",
         time: "Apr 11",
-        description: "Lorem ipsum dolor sit amet, quo ei simul congue exerci...",
-        position: "right-4"
+        description: "Lorem ipsum dolor sit amet, quo ei simul congue exerci..."
       },
       {
         title: "12:30 PM",
         time: "Apr 5",
-        description: "Lorem ipsum dolor sit amet, quo ei simul congue exerci...",
-        position: "left-4"
+        description: "Lorem ipsum dolor sit amet, quo ei simul congue exerci..."
       }
     ];
   
-    // Funkcia na vykreslenie všetkých udalostí
     function displayAllTimelineEvents() {
       const timelineContainer = document.getElementById("timeline");
-      timelineContainer.innerHTML = ""; // Vyčistiť kontajner pre nové elementy
+      timelineContainer.innerHTML = "";
+      let isLeft = true; 
   
-      // Vygenerovať HTML pre každú udalosť a pridať do kontajnera
+
       timelineData.forEach(event => {
+        const positionClass = isLeft ? "left-4" : "right-4";
+        const cardClass = isLeft ? "gradient-custom" : "gradient-custom-4";
+        
         const eventHTML = `
-          <div class="timeline-4 ${event.position}">
-            <div class="card ${event.position === "left-4" ? "gradient-custom" : "gradient-custom-4"}">
+          <div class="timeline-4 ${positionClass}">
+            <div class="card ${cardClass}">
               <div class="card-body p-4">
                 <h4>${event.title}</h4>
                 <p class="small text-white-50 mb-4">${event.time}</p>
@@ -289,10 +287,10 @@
           </div>
         `;
         timelineContainer.innerHTML += eventHTML;
+        isLeft = !isLeft;
       });
     }
   
-    // Zobraziť všetky udalosti naraz
     displayAllTimelineEvents();
   </script>
   </body>
