@@ -111,10 +111,9 @@ body, html {
     padding: 4rem 2rem;
     text-align: center;
     color: #fff;
-    background-color: #111;
     width: 100%;
 }
-.info, .container, .school-info-content {
+.about, .info, .container, .school-info {
     display: block;
     align-items: center;
     text-align: left;
@@ -155,7 +154,7 @@ body, html {
 
 /* Sekcia o Našej Škole */
 .school-info {
-    background-color: #111;
+    background-color: #222;
 }
 .school-info h3 {
     color: #5ea1a6;
@@ -191,4 +190,126 @@ body, html {
 .gallery img:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Responzivita */
+
+/* Šírka 1400px a nižšia */
+@media (max-width: 1400px) {
+    .tittle {
+        font-size: 50px;
+    }
+    .bannerImg {
+        max-width: 600px;
+    }
+}
+
+/* Šírka 1250px a nižšia */
+@media (max-width: 1250px) {
+    .tittle {
+        font-size: 45px;
+    }
+    .banner {
+        flex-direction: column;
+        text-align: center;
+    }
+    .text {
+        padding-right: 0;
+    }
+    .bannerImg {
+        max-width: 500px;
+        margin-top: 2rem;
+    }
+}
+
+/* Šírka 850px a nižšia */
+@media (max-width: 850px) {
+    .tittle {
+        font-size: 40px;
+    }
+    .about, .contact, .school-info {
+        padding: 3rem 1.5rem;
+    }
+    .info, .container, .school-info-content {
+        padding: 1.5rem;
+    }
+    .bannerImg {
+        max-width: 400px;
+    }
+}
+
+/* Šírka 550px a nižšia */
+@media (max-width: 550px) {
+    /* Zmenšenie veľkosti písma */
+    .tittle {
+        font-size: 28px;
+        margin: 0;
+        padding: 0;
+    }
+    .textA h3, .school-info h3 {
+        font-size: 24px;
+        text-align: center;
+    }
+    .textP, .school-info p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+        padding: 0;
+        margin: 10px 0;
+        text-align: justify;
+    }
+
+    /* Úprava navigácie */
+    .rightnav img {
+        width: 50px;
+        margin: 5px;
+    }
+    .rightnav a, .zaluby, .zmeny {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    /* Úpravy bannera */
+    .banner {
+        flex-direction: column;
+        padding: 1rem;
+        height: auto;
+        text-align: center;
+    }
+    .text {
+        padding: 0;
+    }
+    .bannerImg {
+        max-width: 280px;
+        margin-top: 1rem;
+    }
+    .bannerImg img {
+        border-radius: 20px;
+    }
+
+    /* Úpravy sekcií */
+    .about, .contact, .school-info {
+        padding: 2rem 1rem;
+    }
+    .info, .container, .school-info-content {
+        padding: 1rem;
+        margin: 1.5rem auto 0;
+    }
+    
+    /* Tlačidlá a odkazy */
+    .container a {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    /* Galéria */
+    .gallery img {
+        max-width: 100%;
+        margin-bottom: 1rem;
+        border-radius: 10px;
+    }
+
+    /* Pre odkazy na záľuby */
+    .hobbies-link {
+        font-size: 0.9rem;
+    }
 }
