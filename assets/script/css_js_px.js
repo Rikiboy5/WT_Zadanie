@@ -6,8 +6,6 @@ function updateCssByWidth() {
   const width = resizeElement.offsetWidth;
   let newCssFile = 'assets/css/style-700.css';
 
-  console.log("Aktuální šířka elementu:", width);
-
   if (width >= 1600) {
     newCssFile = 'assets/css/style-1600.css';
   } else if (width >= 1300) {
