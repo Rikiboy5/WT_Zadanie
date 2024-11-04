@@ -41,6 +41,7 @@
             <div class="text">
                 <h2 class="tittle">Vitajte na našej stránke</h2>
                 <p class="subtiitle">Tu sa dozviete niečo málo o nás, našej spoločnej práci na projekte.</p>
+                <a href="#about" class="btn cta-btn">Viac o nás</a>
             </div>
 
             <div class="bannerImg" alt="Banner">
@@ -92,24 +93,34 @@
         <div class="container text-center">
             <div class="row">
                 <div class="col-md-4 mb-4">
-                    <img src="assets/images/image1.jpg" class="img-fluid" alt="Obrázok 1">
+                    <img src="assets/images/1.jpg" class="img-fluid" alt="Obrázok 1">
                 </div>
                 <div class="col-md-4 mb-4">
-                    <img src="assets/images/image2.jpg" class="img-fluid" alt="Obrázok 2">
+                    <img src="assets/images/2.jpg" class="img-fluid" alt="Obrázok 2">
                 </div>
                 <div class="col-md-4 mb-4">
-                    <img src="assets/images/image3.jpg" class="img-fluid" alt="Obrázok 3">
+                    <img src="assets/images/3.jpg" class="img-fluid" alt="Obrázok 3">
                 </div>
                 <div class="col-md-4 mb-4">
-                    <img src="assets/images/image4.jpg" class="img-fluid" alt="Obrázok 4">
+                    <img src="assets/images/4.jpg" class="img-fluid" alt="Obrázok 4">
                 </div>
                 <div class="col-md-4 mb-4">
-                    <img src="assets/images/image5.jpg" class="img-fluid" alt="Obrázok 5">
+                    <img src="assets/images/5.jpg" class="img-fluid" alt="Obrázok 5">
                 </div>
                 <div class="col-md-4 mb-4">
-                    <img src="assets/images/image6.jpg" class="img-fluid" alt="Obrázok 6">
+                    <img src="assets/images/6.jpg" class="img-fluid" alt="Obrázok 6">
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img src="assets/images/7.jpg" class="img-fluid" alt="Obrázok 6">
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img src="assets/images/8.jpg" class="img-fluid" alt="Obrázok 6">
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img src="assets/images/9.jpg" class="img-fluid" alt="Obrázok 6">
                 </div>
             </div>
+            <p>Zdroj Instagram: @fei.tuke</p>
         </div>
 </section>
 
@@ -142,6 +153,22 @@
         
        
         setInterval(showNextImage, 5000);
+
+        document.addEventListener('DOMContentLoaded', function() {
+    const fadeInElements = document.querySelectorAll('.fade-in');
+    
+    function handleScroll() {
+        fadeInElements.forEach(element => {
+            const rect = element.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                element.classList.add('visible');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check to see if elements are already in view
+});
         </script>
         
         
