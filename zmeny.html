@@ -15,6 +15,11 @@
     background-color: black;
     font-family: Arial, sans-serif;
   }
+  p, h1, h2, .sText, .main-text, .text {
+
+    transition: all 0.5s ease;
+
+  }
   .roadmap {
     border-radius: 20px;
     animation: fadeUp 1s ease-in-out;
@@ -199,6 +204,28 @@
     }
     
   }
+  .button-container {
+      display: flex;
+      justify-content: center;
+  }
+    
+  .styled-button {
+      background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      margin-top: 20px;
+      height: 6vh;
+      width: 65vw;
+    
+  }
+  .styled-button:hover {
+      transform: scale(1.05);
+  }
 
   @keyframes fadeInRight {
     from {
@@ -232,6 +259,17 @@
     </div>
     <div class="col-md-5 col-sm-12 imgdiv">
       <img src="assets/images/progress.png" class="img" alt="img">
+    </div>
+      <div class="button-container">
+      <button onclick="resizeContent()" class="styled-button">Zmeniť veľkosť</button>
+    </div>
+    <div class="container my-4">
+      <p class="text-center" style="color: rgba(255, 255, 255, 0.905); font-size: 1.2rem;">
+        Ak chcete zmeniť veľkosť, použite nasledujúce možnosti
+      </p>
+      <p class="text-center" style="color: rgb(97, 97, 97); font-size: 1.2rem;">
+        Na tejto stránke môžete zmeniť veľkosť pomocou klávesy „R“, dvojitého kliknutia ľavým tlačidlom myši alebo tlačidla.
+      </p>
     </div>
   </div>    
   <div class="container py-5 bg-dark roadmap">
