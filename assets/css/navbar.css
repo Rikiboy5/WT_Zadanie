@@ -1,0 +1,61 @@
+.navbar {
+    padding: 0;
+    margin: 0;
+    background-color: #222222;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    top: 0;
+    height: 10%;
+}
+.rightnav img {
+    margin: 10px;
+    align-content: end;
+    width: 80px;
+}
+.rightnav a {
+    text-decoration: none;
+    color: var(--bs-secondary);
+    font-size: 20px;
+    text-align: center;
+}
+.leftnav {
+    float: right;
+}
+.zaluby, .zmeny {
+    text-decoration: none;
+    color: var(--bs-secondary);
+    padding: 10px;
+    margin: 10px;
+}
+.zaluby:hover, .zmeny:hover {
+    background-color: #5ea1a6;
+}
+.rightnav a, .zaluby, .zmeny {
+    font-size: 14px;
+    padding: 8px;
+}
+.container a {
+    border-radius: 10px;
+    background-color: var(--bs-secondary);
+    border: none;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+.container a:hover {
+    background-color: #5ea1a6;
+}
+footer {
+    width: 100%;
+    background-color: #222;
+    text-align: center;
+}
+footer a {
+    text-decoration: underline;
+    color: white;
+    font-weight: normal;
+
+}

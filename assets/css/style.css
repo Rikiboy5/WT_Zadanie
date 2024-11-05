@@ -17,35 +17,6 @@ body, html {
     scroll-behavior: smooth;
 }
 
-.navbar {
-    padding: 0;
-    margin: 0;
-}
-.rightnav img {
-    margin: 10px;
-    align-content: end;
-    width: 80px;
-}
-.rightnav a {
-    text-decoration: none;
-    color: var(--bs-secondary);
-    font-size: 20px;
-    text-align: center;
-}
-.leftnav {
-    float: right;
-}
-.zaluby, .zmeny {
-    text-decoration: none;
-    color: var(--bs-secondary);
-    padding: 10px;
-    margin: 10px;
-}
-.zaluby:hover, .zmeny:hover {
-    background-color: #5ea1a6;
-}
-
-
 .banner {
     display: flex;
     width: 100%;
@@ -119,13 +90,11 @@ body, html {
     align-items: center;
     text-align: left;
     gap: 2rem;
-    margin-top: 2rem;
     background-color: #222;
     padding: 2rem;
     border-radius: 20px;
     color: #fff;
     max-width: 1600px;
-    margin: 2rem auto 0;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
 
@@ -169,19 +138,7 @@ body, html {
 }
 
 /* Sekcia Kontakt */
-.container a {
-    border-radius: 10px;
-    background-color: var(--bs-secondary);
-    border: none;
-    padding: 0.5rem 1rem;
-    color: #fff;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-}
-.container a:hover {
-    background-color: #5ea1a6;
-}
+
 
 .gallery img {
     width: 100%;
@@ -274,10 +231,6 @@ body, html {
     .rightnav img {
         width: 50px;
         margin: 5px;
-    }
-    .rightnav a, .zaluby, .zmeny {
-        font-size: 14px;
-        padding: 8px;
     }
 
     /* Úpravy bannera */
