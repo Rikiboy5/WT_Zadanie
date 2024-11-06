@@ -211,13 +211,13 @@ body, html {
 }
 
 /* Šírka 550px a nižšia */
-@media (max-width: 550px) {
+@media (max-width: 551px) {
     /* Zmenšenie veľkosti písma */
     
     .tittle {
         font-size: 28px;
         margin: 0;
-        padding: 0;
+        padding-top: 100px;
     }
     .textA h3, .school-info h3 {
         font-size: 24px;
@@ -249,7 +249,8 @@ body, html {
         padding: 0;
     }
     .bannerImg {
-        max-width: 280px;
+        max-width: 180px;
+        padding-top: 30px;
         margin-top: 1rem;
         animation: fadeInLeft 1s ease-in-out;
     }
