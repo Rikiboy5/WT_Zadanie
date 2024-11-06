@@ -29,7 +29,7 @@ body, html {
     background-color: rgba(30, 30, 30, 0.8); 
     border-bottom-right-radius:40px ;
     border-bottom-left-radius:40px ;
-}
+}   
 .text {
     flex: 1;
     padding-right: 3rem;
@@ -53,8 +53,8 @@ body, html {
 
 .bannerImg img {
     width: 100%;
-    max-width: 512px;
-    max-height: 512px;
+    max-width: 412px;
+    max-height: 412px;
     height: 100%;
     border-radius: 50px;
     object-fit: contain; 
@@ -176,6 +176,7 @@ body, html {
 /* Šírka 1250px a nižšia */
 @media (max-width: 1250px) {
     .tittle {
+        padding-top: 110px;
         font-size: 45px;
     }
     .banner {
@@ -183,17 +184,18 @@ body, html {
         text-align: center;
     }
     .text {
-        padding-right: 0;
+        padding-right: 0px;
     }
     .bannerImg {
         max-width: 500px;
-        margin-top: 2rem;
+            
     }
 }
 
 /* Šírka 850px a nižšia */
-@media (max-width: 850px) {
+@media (max-width: 851px) {
     .tittle {
+        padding-top: 90px;
         font-size: 40px;
     }
     .about, .contact, .school-info {
@@ -203,13 +205,15 @@ body, html {
         padding: 1.5rem;
     }
     .bannerImg {
-        max-width: 400px;
+        max-width: 300px;
+        max-height: 300px;
     }
 }
 
 /* Šírka 550px a nižšia */
 @media (max-width: 550px) {
     /* Zmenšenie veľkosti písma */
+    
     .tittle {
         font-size: 28px;
         margin: 0;
