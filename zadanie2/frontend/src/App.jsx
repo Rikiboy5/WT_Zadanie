@@ -6,6 +6,7 @@ import Home from "./components/Home";
 import RegistrationForm from "./components/RegistrationForm";
 import GdprTerms from "./components/GdprTerms";
 import Navbar from "./components/Navbar";
+import ZmenySection from "./components/ZmenySection";
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
         <Route path="/zaluby" element={<TeamSection />} />
         <Route path="/register" element={<RegistrationForm />} />
         <Route path="/GDPR" element={<GdprTerms />} />
+        <Route path="/zmeny" element={<ZmenySection />} />
+        
       </Routes>
     </div>
   );
