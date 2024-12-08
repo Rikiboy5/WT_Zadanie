@@ -117,19 +117,17 @@ function ZmenyRoad() {
       </div>
 
 
-      <div className="container my-4">
+      {/* <div className="container my-4"> */}
       <p className="transition-all duration-300 ease-in-out text-center text-white" style={{ color: 'rgba(255, 255, 255, 0.905)', fontSize: '1.2rem' }}>
           Ak chcete zmeniť veľkosť, použite nasledujúce možnosti
         </p>
-        <p className="transition-all duration-300 ease-in-out text-center text-gray-400" style={{ color: 'rgb(97, 97, 97)', fontSize: '1.2rem' }}>
+        <p className="transition-all duration-300 ease-in-out text-center text-gray-400 mb-4" style={{ color: 'rgb(97, 97, 97)', fontSize: '1.2rem' }}>
         Na tejto stránke môžete zmeniť veľkosť pomocou klávesy „R“, dvojitého kliknutia ľavým tlačidlom myši alebo tlačidla.
         </p>
-      </div>
+  
 
-      {/* Roadmap Section */}
-      <div class="container mx-auto py-5 roadmap bg-gray-900 relative  rounded-lg ">
-
-        <div class="relative main-timeline-4 text-white" id="timeline"></div>
+      <div className="bg-gray-900 text-white py-8">
+        <div className="relative" id="timeline"></div>
       </div>
 
 
@@ -181,33 +179,37 @@ function ZmenyRoad() {
         </div>
       </section>
       <footer className="bg-gray-900 text-white py-8">
-  <div className="container mx-auto flex flex-col md:flex-row justify-center md:justify-between items-center md:items-start">
-    <div className="flex-1 flex flex-col justify-start items-center text-center mb-4 md:mb-0">
-      <p className="transition-all duration-300 ease-in-out text-gray-400">&copy; 2024 Webové Technológie</p>
-      <p>
-        <span className="transition-all duration-300 ease-in-out text-secondary font-bold" style={{ color: '#71b9bf' }}>Vytvoril: </span>
-        Ján Dudaško, Richard Gaál, Simon Kentoš, Valerii Kutsenko
-      </p>
-    </div>
+      <div className="flex flex-col md:flex-row justify-center items-start md:justify-between w-full">
+  {/* Лівий блок */}
+  <div className="flex-1 flex flex-col items-center text-center mb-4 md:mb-0">
+    <p className="transition-all duration-300 ease-in-out text-gray-400">&copy; 2024 Webové Technológie</p>
+    <p>
+      <span className="transition-all duration-300 ease-in-out text-secondary font-bold" style={{ color: '#71b9bf' }}>Vytvoril: </span>
+      Ján Dudaško, Richard Gaál, Simon Kentoš, Valerii Kutsenко
+    </p>
+  </div>
 
-    <div className="flex-1 flex flex-col justify-start items-center text-center">
-      <p className="transition-all duration-300 ease-in-out text-secondary font-bold mb-2" style={{ color: '#71b9bf' }}>Napíšte nám</p>
-      <div className="flex flex-col space-y-1">
-        <a className="transition-all duration-300 ease-in-out hover:text-secondary transition" href="mailto:jan.dudasko@student.tuke.sk">
-          jan.dudasko@student.tuke.sk
-        </a>
-        <a className="transition-all duration-300 ease-in-out hover:text-secondary transition" href="mailto:richard.gaal@student.tuke.sk">
-          richard.gaal@student.tuke.sk
-        </a>
-        <a className="transition-all duration-300 ease-in-out hover:text-secondary transition" href="mailto:simon.kentos@student.tuke.sk">
-          simon.kentos@student.tuke.sk
-        </a>
-        <a className="transition-all duration-300 ease-in-out hover:text-secondary transition" href="mailto:valerii.kutsenko@student.tuke.sk">
-          valerii.kutsenko@student.tuke.sk
-        </a>
-      </div>
+  {/* Правий блок */}
+  <div className="flex-1 flex flex-col items-center text-center">
+    <p className="transition-all duration-300 ease-in-out text-secondary font-bold mb-2" style={{ color: '#71b9bf' }}>Napíšte nám</p>
+    <div className="flex flex-col space-y-1">
+      <a className="transition-all duration-300 ease-in-out hover:text-secondary" href="mailto:jan.dudasko@student.tuke.sk">
+        jan.dudasko@student.tuke.sk
+      </a>
+      <a className="transition-all duration-300 ease-in-out hover:text-secondary" href="mailto:richard.gaal@student.tuke.sk">
+        richard.gaal@student.tuke.sk
+      </a>
+      <a className="transition-all duration-300 ease-in-out hover:text-secondary" href="mailto:simon.kentos@student.tuke.sk">
+        simon.kentos@student.tuke.sk
+      </a>
+      <a className="transition-all duration-300 ease-in-out hover:text-secondary" href="mailto:valerii.kutsenko@student.tuke.sk">
+        valerii.kutsenko@student.tuke.sk
+      </a>
     </div>
   </div>
+</div>
+
+  
 </footer>
     
     </div>
