@@ -1,0 +1,249 @@
+:root {
+    --primary-color: #5ea1a6;
+    --secondary-color: #aaa;
+    --background-dark: #222;
+    --box-shadow-dark: rgba(0, 0, 0, 0.5);
+}
+
+/* Animácie */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Globálne štýly */
+body, html {
+    height: 100%;
+    margin: 0;
+    background-color: #000;
+    color: var(--primary-color);
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Banner sekcia */
+.banner {
+    display:flex;
+    width: 100%;
+    max-width: 1600px;
+    height: 100vh;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    margin: 0 auto;
+    background-color: rgba(30, 30, 30, 0.8);
+    border-bottom-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+}
+
+.text {
+    flex: 1;
+    padding-right: 3rem;
+    animation: fadeInLeft 1s ease-in-out;
+}
+
+.tittle {
+    font-size: 60px;
+}
+
+.Bannerimages {
+    flex: 1;
+    display: flex;
+    align-items: center;  
+    justify-content: center;  
+    position: relative;
+    top: 0;
+    height: 100%; 
+    animation: fadeInRight 1s ease-in-out;
+}
+
+.Bannerimages .Bannertrans {
+    position: absolute;  
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  
+    width: 100%;
+    max-width: 412px; 
+    max-height: 412px;  
+    height: 100%;
+    border-radius: 50px;
+    object-fit: contain;  
+    opacity: 0;  
+    visibility: hidden;  
+    transition: opacity 1s ease-in-out, visibility 1s ease-in-out;  
+    z-index: 1;  
+}
+
+.Bannerimages .Bannertrans.active {
+    opacity: 1;  
+    visibility: visible;  
+    animation: fadeIn 1s ease-in-out;  
+    z-index: 1;  
+}
+
+.Bannerimages .Bannertrans.fade-out {
+    animation: fadeOut 1s ease-in-out; 
+}
+
+.Bannerimages .Bannertrans:hover {
+   
+    box-shadow: 0 0 30px rgb(113, 185, 191); 
+}
+
+/* Ostatné sekcie */
+.about, .contact, .school-info {
+    padding: 4rem 2rem;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    background-color: var(--background-dark);
+    border-radius: 20px;
+    box-shadow: 0 0 30px var(--box-shadow-dark);
+    margin: 0 auto;  
+}
+
+/* Pre každú sekciu so špecifickým rozložením */
+.about, .info, .containerSchool,.containerS,.container,.containerC,.school-info {
+    display: block;
+    align-items: center;
+    text-align: left;
+    gap: 2rem;
+    background-color: #222;
+    padding: 2rem;
+    border-radius: 20px;
+    color: #fff;
+    max-width: 1600px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    margin: 0 auto;  /* Centrum na stránke */
+}
+
+/* Textové štýly */
+.textA {
+    color: var(--primary-color);
+    font-size: 2rem;
+}
+
+.textP {
+    color: var(--secondary-color);
+    line-height: 1.6;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+
+/* Odkazy v sekcii Hobbies */
+.hobbies-link {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: #aaa;
+}
+
+.hobbies-link a {
+    color: var(--primary-color); 
+    text-decoration: none; 
+}
+
+.hobbies-link a:hover {
+    color: #fff; 
+}
+
+/* Sekcia o Našej Škole */
+.school-info {
+    background-color: #222;
+}
+
+.school-info h3 {
+    color: var(--primary-color);
+    font-size: 2rem;
+}
+
+.school-info p {
+    color: #aaa;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+/* Pre kontaktovú sekciu */
+.contact .containerSchool {
+    text-align: center;
+}
+.containerC h3{
+    text-align: center;
+    font-size: 1.5rem;
+}
+.containerC a{
+    text-align: center;
+    margin: 110px;
+    color: var(--primary-color); 
+}
+.about, .contact, .school-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Galéria */
+.gallery {
+    padding: 20px; 
+  }
+  
+  .gallery .row {
+    display: flex;
+    flex-wrap: wrap;  
+    gap: 20px;  
+    justify-content: center; 
+  }
+  
+  .gallery .col-4 {
+    flex: 1 1 calc(33.33% - 20px);  
+    max-width: calc(33.33% - 20px);  
+  }
+  
+  .gallery-img {
+    width: 100%;  
+    height: 200px;  
+    object-fit: cover;  
+    border-radius: 10px;  
+    transition: transform 0.3s ease, box-shadow 0.3s ease;  
+    display: block; 
+  }
+  
+  .gallery-img:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);  
+  }
+  
+  .container p {
+    color: #aaa;  
+    text-align: center;  
+    padding: 20px;
+  }
