@@ -185,8 +185,11 @@ function ZmenyRoad() {
     <p className="transition-all duration-300 ease-in-out text-gray-400">&copy; 2024 Webové Technológie</p>
     <p>
       <span className="transition-all duration-300 ease-in-out text-secondary font-bold" style={{ color: '#71b9bf' }}>Vytvoril: </span>
-      Ján Dudaško, Richard Gaál, Simon Kentoš, Valerii Kutsenко
+      <a className="transition-all duration-300 ease-in-out hover:text-secondary" href="mailto:jan.dudasko@student.tuke.sk">
+        Ján Dudaško, Richard Gaál, Simon Kentoš, Valerii Kutsenко
+      </a>
     </p>
+  
   </div>
 
   {/* Правий блок */}
