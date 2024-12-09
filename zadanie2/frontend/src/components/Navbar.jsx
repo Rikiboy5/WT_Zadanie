@@ -7,7 +7,8 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-gray-800 fixed w-full z-20 top-0 left-0">
+    // Zmena z `fixed` na `sticky`
+    <nav className="bg-gray-800 sticky top-0 z-20">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo a názov */}
@@ -20,7 +21,7 @@ function Navbar() {
               Webové Technológie
             </Link>
           </div>
-          {/* Hamburger menu pre mobilné zariadenia */}
+          {/* Hamburger menu pre mobily */}
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -54,7 +55,7 @@ function Navbar() {
               </svg>
             </button>
           </div>
-          {/* Navigačné odkazy pre desktop */}
+          {/* Odkazy pre desktop */}
           <div className="hidden md:flex md:items-center md:space-x-6">
             <Link
               to="/zaluby"
@@ -107,6 +108,13 @@ function Navbar() {
               onClick={() => setIsOpen(false)}
             >
               Registrácia
+            </Link>
+            <Link
+              to="/users"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+              onClick={() => setIsOpen(false)}
+            >
+              Výpis
             </Link>
           </div>
         </div>

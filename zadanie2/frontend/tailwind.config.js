@@ -1,11 +1,12 @@
 // tailwind.config.js
-module.exports = {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,jsx,ts,tsx}", // Upravte podľa toho, či používate JS alebo TS
-  ],
+export default {
+  content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      // Tu môžeš pridať svoje vlastné rozšírenia tém
+    },
   },
-  plugins: [],
+  plugins: [
+    // Tu môžeš pridať svoje Tailwind pluginy
+  ],
 };

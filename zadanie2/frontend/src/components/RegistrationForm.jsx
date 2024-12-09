@@ -18,7 +18,6 @@ function RegistrationForm() {
   const [success, setSuccess] = useState("");
   const navigate = useNavigate();
 
-  // Validácie
   const isNameValid = (name) => /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/.test(name);
   const isEmailValid = (email) => /\S+@\S+\.\S+/.test(email);
 
@@ -35,7 +34,6 @@ function RegistrationForm() {
     setError("");
     setSuccess("");
 
-    // Validácie
     if (!isNameValid(formData.name)) {
       setError("Meno môže obsahovať iba písmená.");
       return;
@@ -69,7 +67,6 @@ function RegistrationForm() {
         formData
       );
       setSuccess("Úspešne zaregistrovaný.");
-      // Po 3 sekundách presmerovať na domovskú stránku
       setTimeout(() => {
         navigate("/");
       }, 3000);
@@ -91,7 +88,7 @@ function RegistrationForm() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-900">
+    <div className="pt-20 flex items-center justify-center min-h-screen bg-gray-900">
       <div className="w-full max-w-md p-8 bg-gray-800 text-white rounded-lg shadow-lg">
         <h2 className="text-3xl font-bold mb-6 text-center">
           Registračný Formulár
@@ -105,7 +102,6 @@ function RegistrationForm() {
           </p>
         )}
         <form onSubmit={handleSubmit} className="space-y-4">
-          {/* Meno */}
           <div>
             <label className="block mb-1 font-semibold">Meno*</label>
             <input
@@ -117,7 +113,6 @@ function RegistrationForm() {
               required
             />
           </div>
-          {/* Priezvisko */}
           <div>
             <label className="block mb-1 font-semibold">Priezvisko*</label>
             <input
@@ -129,8 +124,6 @@ function RegistrationForm() {
               required
             />
           </div>
-
-          {/* Rok narodenia */}
           <div>
             <label className="block mb-1 font-semibold">Rok narodenia*</label>
             <input
@@ -142,8 +135,6 @@ function RegistrationForm() {
               required
             />
           </div>
-
-          {/* Štát */}
           <div>
             <label className="block mb-1 font-semibold">Štát*</label>
             <input
@@ -155,8 +146,6 @@ function RegistrationForm() {
               required
             />
           </div>
-
-          {/* Email */}
           <div>
             <label className="block mb-1 font-semibold">Email*</label>
             <input
@@ -168,7 +157,6 @@ function RegistrationForm() {
               required
             />
           </div>
-          {/* Heslo */}
           <div>
             <label className="block mb-1 font-semibold">Heslo*</label>
             <input
@@ -180,8 +168,6 @@ function RegistrationForm() {
               required
             />
           </div>
-
-          {/* Telefón */}
           <div>
             <label className="block mb-1 font-semibold">
               Telefón (Nepovinné)
@@ -194,8 +180,6 @@ function RegistrationForm() {
               className="w-full p-3 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-teal-500"
             />
           </div>
-
-          {/* GDPR Súhlas */}
           <div className="flex items-center">
             <input
               type="checkbox"
@@ -216,8 +200,6 @@ function RegistrationForm() {
               *
             </label>
           </div>
-
-          {/* Tlačidlo */}
           <button
             type="submit"
             className="w-full bg-teal-500 hover:bg-teal-600 p-3 rounded text-white font-semibold transition duration-300"
