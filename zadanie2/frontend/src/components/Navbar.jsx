@@ -74,6 +74,12 @@ function Navbar() {
             >
               Registrácia
             </Link>
+            <Link
+              to="/users"
+              className="text-gray-300 hover:text-white text-lg"
+            >
+              Výpis
+            </Link>
           </div>
         </div>
       </div>
