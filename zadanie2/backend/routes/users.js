@@ -93,4 +93,60 @@ router.post("/register", async (req, res) => {
   }
 });
 
+// Získať všetkých používateľov
+router.get("/", async (req, res) => {
+  try {
+    const users = await User.find();
+    res.json(users);
+  } catch (err) {
+    console.error("Error fetching users:", err);
+    res.status(500).json({ message: "Chyba pri načítaní používateľov." });
+  }
+});
+
+// Upraviť používateľa
+router.put("/:id", async (req, res) => {
+  const { name, surname, birthYear, country, email, phone, agreeToGDPR } = req.body;
+  try {
+    // Nájsť používateľa podľa ID
+    const user = await User.findById(req.params.id);
+
+    // Ak používateľ neexistuje
+    if (!user) {
+      return res.status(404).json({ message: "Používateľ nenájdený." });
+    }
+
+    // Aktualizovať údaje používateľa
+    user.name = name || user.name;
+    user.surname = surname || user.surname;
+    user.birthYear = birthYear || user.birthYear;
+    user.country = country || user.country;
+    user.email = email || user.email;
+    user.phone = phone || user.phone;
+    user.agreeToGDPR = agreeToGDPR || user.agreeToGDPR;
+
+    await user.save();
+    res.json({ message: "Používateľ úspešne upravený." });
+  } catch (error) {
+    console.error("Error updating user:", error);
+    res.status(500).json({ message: "Chyba pri úprave používateľa." });
+  }
+});
+
+// Odstrániť používateľa
+router.delete("/:id", async (req, res) => {
+  try {
+    const user = await User.findByIdAndDelete(req.params.id);
+
+    if (!user) {
+      return res.status(404).json({ message: "Používateľ nenájdený." });
+    }
+
+    res.json({ message: "Používateľ bol vymazaný." });
+  } catch (err) {
+    console.error("Error deleting user:", err);
+    res.status(500).json({ message: "Chyba pri mazaniu používateľa." });
+  }
+});
+
 export default router;
