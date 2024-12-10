@@ -1,0 +1,30 @@
+#resize-element {
+  width: 700px;
+  height: 200px;
+  border: 2px solid #ffffff;
+  resize: horizontal;
+  overflow: auto;
+  padding: 10px;
+  display: flex;
+  margin-right: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10%;
+  background-color: var(--bs-dark);
+  transition: background-color 0.5s ease;
+  border-radius: 50px;
+
+}
+.square-1 {
+  width: 100px;
+  height: 100px;
+  background-color: #00ff80;
+  transition: background-color 0.5s ease;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.sText-1 {
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+}

@@ -1,0 +1,30 @@
+#resize-element {
+  width: 700px;
+  height: 200px;
+  border: 2px solid #ffffff;
+  resize: horizontal;
+  overflow: auto;
+  padding: 10px;
+  display: flex;
+  margin-right: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10%;
+  background-color: var(--bs-dark);
+  transition: background-color 0.5s ease;
+  border-radius: 50px;
+}
+.square-3 {
+  width: 175px;
+  height: 175px;
+  background-color: #c42929;
+  transition: background-color 0.5s ease;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.sText-3 {
+  color: white;
+  font-size: 24px;
+  
+}
