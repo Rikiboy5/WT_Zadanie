@@ -44,8 +44,8 @@ const ResizableComponent = () => {
       return (
         <div>
    <div>
-    <button className=" transition-all duration-300 ease-in-out bg-white text-black rounded-lg p-2 m-2 mb-6 shadow-md hover:bg-gray-200 transition " onClick={() => handleButtonClick(900)}>900px</button>
     <button className=" transition-all duration-300 ease-in-out bg-white text-black rounded-lg p-2 m-2 mb-6 shadow-md hover:bg-gray-200 transition " onClick={() => handleButtonClick(700)}>700px</button>
+    <button className=" transition-all duration-300 ease-in-out bg-white text-black rounded-lg p-2 m-2 mb-6 shadow-md hover:bg-gray-200 transition " onClick={() => handleButtonClick(900)}>900px</button>
     <button className=" transition-all duration-300 ease-in-out bg-white text-black rounded-lg p-2 m-2 mb-6 shadow-md hover:bg-gray-200 transition " onClick={() => handleButtonClick(1300)}>1300px</button>
     <button className=" transition-all duration-300 ease-in-out bg-white text-black rounded-lg p-2 m-2 mb-6 shadow-md hover:bg-gray-200 transition " onClick={() => handleButtonClick(1600)}>1600px</button>
   </div>
