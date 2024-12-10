@@ -1,5 +1,6 @@
 import "slick-carousel/slick/slick.css";
 import ResizeContent from "./ResizeContent";
+import ResizableComponent from "./ResizableComponent";
 
 import "slick-carousel/slick/slick-theme.css";
 import React, { useEffect } from "react";
@@ -131,7 +132,7 @@ function ZmenyRoad() {
       </div>
 
 
-    
+      
 
       <section className="text-center my-8">
         <h2 className="transition-all duration-300 ease-in-out main-text text-white text-center text-2xl sm:text-3xl md:text-4xl font-semibold mb-6">
@@ -139,42 +140,13 @@ function ZmenyRoad() {
           rôznych štylov <span className="transition-all duration-300 ease-in-out text-secondary font-medium" style={{ color: '#71b9bf' }}>CSS</span>
         </h2>
 
-        <div className="bg-gray-800 p-8">
-          <div className="flex flex-col items-center">
-          <div className="mb-3">
-  <button className="transition-all duration-300 ease-in-out bg-white text-black rounded-lg p-2 m-1 shadow-md hover:bg-gray-200 transition" onClick={() => setWidth(700)}>
-    700px
-  </button>
-  <button className="transition-all duration-300 ease-in-out bg-white text-black rounded-lg p-2 m-1 shadow-md hover:bg-gray-200 transition" onClick={() => setWidth(900)}>
-    900px
-  </button>
-  <button className="transition-all duration-300 ease-in-out bg-white text-black rounded-lg p-2 m-1 shadow-md hover:bg-gray-200 transition" onClick={() => setWidth(1300)}>
-    1300px
-  </button>
-  <button className="transition-all duration-300 ease-in-out bg-white text-black rounded-lg p-2 m-1 shadow-md hover:bg-gray-200 transition" onClick={() => setWidth(1600)}>
-    1600px
-  </button>
-</div>
-           
-            <p className="transition-all duration-300 ease-in-out text-gray-400">
-            Pre ukážku treba natiahnúť element alebo použiť tlačidla vyššie alebo šípky na klávesnici
+        <div className="bg-gray-800 p-8 max-w-full overflow-hidden">
+        <div className="flex flex-col items-center">
+          <div className="mb-3"></div>
+            <p className="transition-all duration-300 ease-in-out mb-4 text-gray-400">
+              Pre ukážku treba natiahnúť element alebo použiť tlačidla vyššie alebo šípky na klávesnici
             </p>
- 
-            <div id="resize-element" className="flex flex-wrap justify-center">
-              <div className="square">
-                <p className="transition-all duration-300 ease-in-out sText">Text 1</p>
-              </div>
-              <div className="square">
-                <p className="transition-all duration-300 ease-in-out sText">Text 2</p>
-              </div>
-              <div className="square">
-                <p className="transition-all duration-300 ease-in-out sText">Text 3</p>
-              </div>
-              <div className="square">
-                <p className="transition-all duration-300 ease-in-out sText">Text 4</p>
-              </div>
-             
-            </div>
+            <ResizableComponent />
           </div>
         </div>
       </section>
@@ -214,7 +186,7 @@ function ZmenyRoad() {
 
   
 </footer>
-    
+
     </div>
   );
 }
